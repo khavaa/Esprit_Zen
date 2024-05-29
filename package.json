@@ -1,0 +1,27 @@
+{
+  "name": "esprit_zen",
+  "version": "1.0.0",
+  "description": "Site Web de l'entreprise de bien être 'Esprit Zen'",
+  "main": "server.js",
+  "scripts": {
+    "test": "npm start",
+    "start": "node server.js"
+  },
+  "author": "khava",
+  "license": "ISC",
+  "dependencies": {
+    "@sequelize/mysql": "^7.0.0-alpha.41",
+    "connect-session-sequelize": "^7.1.7",
+    "express": "^4.19.2",
+    "express-handlebars": "^7.1.2",
+    "express-session": "^1.18.0",
+    "handlebars": "^4.7.8",
+    "handlebars.moment": "^1.0.4",
+    "mysql": "^2.18.1",
+    "mysql2": "^3.9.8",
+    "sequelize": "^6.37.3",
+    "sequelize-auto": "^0.8.8",
+    "sequelize-cli": "^6.6.2",
+    "sqlite3": "^5.1.7"
+  }
+}
