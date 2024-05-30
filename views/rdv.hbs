@@ -1,0 +1,59 @@
+<main>
+        <h1>PRENDRE UN RENDEZ-VOUS</h1>
+
+        <span id="error_rdv"></span>
+
+        <div class="rdv">
+
+            <div class="formRdv">
+                <form action="" method="get" class="form-example" id="appointmentForm">
+                    <span class="error" id="appointmentFormError"></span>
+                    <div class="form-example">
+                        <label for="lastname_rdv">NOM</label>
+                        <input type="text" name="lastname_rdv" id="lastname_rdv" aria-label="nom" minlength="2" required/>
+                        <span class="error" id="lastname_rdvError"></span>
+                    </div>
+                    <div class="form-example">
+                        <label for="firstname_rdv">PRÉNOM</label>
+                        <input type="text" name="firstname_rdv" id="firstname_rdv" aria-label="prénom" minlength="2" required/>
+                        <span class="error" id="firstname_rdvError"></span>
+                    </div>
+                    <div class="form-example">
+                        <label for="number_rdv">NUMÉRO</label>
+                        <input type="tel" name="number_rdv" id="number_rdv" aria-label="numéro de téléphone" pattern="^(\+?\d{1,3}[-.\s]?)?\d{10}$" required/>
+                        <span class="error" id="number_rdvError"></span>
+                    </div>
+                    <div class="dateHour">
+                        <div class="form-example">
+                            <label for="date">DATE</label>
+                            <input type="date" name="date" id="date" aria-label="date du rendez-vous" required/>
+                            <span class="error" id="dateError"></span>
+                        </div>
+                        <div class="form-example">
+                            <label for="time">HEURE</label>
+                            <input type="time" name="time" id="time" aria-label="heure du rendez-vous" required/>
+                            <span class="error" id="timeError"></span>
+                        </div>
+                    </div>
+                    <div class="button-container">
+                        <button type="submit" aria-label="button envoyer mon rendez-vous">ENVOYER</button>
+                    </div>
+                    
+                </form>              
+            </div>
+
+            <div class="carteRdv">
+                <div class="rdvFlex">
+                    <div id="map">
+                        <!-- https://www.codeur.com/tuto/html/ajouter-carte-google-maps-site/ -->
+                        <iframe class="map" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2669.4083008478165!2d0.20633888750211257!3d48.00582109704605!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47e28929620f28bb%3A0xd2f68ba1c04e2bb5!2s13%20Rue%20du%20N%2C%2072100%20Le%20Mans!5e0!3m2!1sfr!2sfr!4v1716193263461!5m2!1sfr!2sfr"  allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                    </div>
+                    <div class="p">
+                        <p>Du lundi au vendredi de 9h à 19h <br>Mercredi de 14h à 19h</p>
+                        <div class="separator"></div>
+                        <p>13 Rue du roi, 72100 Le Mans <br><a href="tel:0633654236">06 33 65 42 36</a></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>

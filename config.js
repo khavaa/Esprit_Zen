@@ -6,8 +6,8 @@ const sequelize = new Sequelize('esprit_zen', 'root', '', {
     dialect: 'mysql'
   });
   
-  sequelize.sync()
+  sequelize.sync();
   
-  const sessionSecret = "keyboard cat"
+  const sessionSecret = "keyboard cat";
   
   module.exports = {sequelize, sessionSecret};

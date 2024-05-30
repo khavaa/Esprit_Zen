@@ -1,0 +1,564 @@
+body, html {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  font-family: Arial, sans-serif;
+}
+
+:root {
+    --background: #fafafa;
+    --white: #ffffff;
+    --grey: #cecece;
+    --primary-color: #E3A165; /* orange */
+    --hover: #F19744; /* orange foncé */
+    --light: #fdfaf7; /* orange clair */
+    --link: #448CF7; /* bleue */
+    --black: #000000; /* noir */
+    --error: #ff0000;
+  }
+
+  span {
+    color: var(--error);
+  }
+
+  #error {
+    text-align: center;
+  }
+
+  body {
+    display: flex;
+    flex-direction: column;
+  }
+
+  main {
+    flex: 1;
+  }
+
+  .logo {
+    margin: 1em;
+  }
+
+  main > h1 {
+    color: var(--primary-color);
+    text-align: center;
+    margin-bottom: 1.5em;
+  }
+
+ body a {
+    text-decoration: none;
+    color: var(--black);
+  }
+
+  body a:hover {
+    color: var(--hover);
+  }
+
+  form button {
+    padding: 0.3em 2em;
+    background-color: var(--primary-color);
+    border-radius: 150px;
+    border: none;
+    color: var(--white);
+    cursor: pointer;
+  }
+
+  button:hover{
+    background-color: var(--hover);
+  }
+  
+
+  /* header */
+  header {
+    position: sticky;
+    top: 0;
+    z-index: 10;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 2px solid var(--primary-color);
+    background-color: var(--white);
+  }
+
+  nav {
+    width: 55%;
+    display: flex;
+    justify-content: space-evenly
+  }
+
+  header a {
+    font-weight: bold;
+  }
+
+  /* menu burger */
+  ul {
+    list-style-type:none;
+    height: 50vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+  }
+
+  .nav-bar {
+    position: absolute;
+    box-shadow: 10px 20px 15px var(--grey);
+    top: 0;
+    left: 0;
+    background-color: var(--light);
+    border-right: 1px solid var(--primary-color);
+    border-radius: 10px;
+    width: 40vh;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    z-index: 10;
+    display: none;
+  }
+
+  .nav-bar.active {
+    display: flex; /* Show when active */
+  }
+
+  .nav-bar a {
+    font-size: 1.5em;
+    font-weight: bold;
+  }
+
+  .nav-bar a:hover {
+    color: var(--primary-color);
+  }  
+
+  .burger:hover {
+    background-color: var(--white);
+  }
+
+ .burger{
+  background: none;
+  border: none;
+  margin: 2em;
+ }
+
+ .burger i {
+  font-size: 2em;
+ }
+
+  @media screen and (max-width: 1232px){
+    #menu{
+      display: none;
+    }
+  }
+
+  @media screen and (min-width: 1232px){
+    .nav-bar, .burger{
+      display: none;
+    }
+  }
+
+  /* footer */
+  footer {
+    display: flex;
+    justify-content: space-between;
+    border-top: 2px solid var(--primary-color);
+    padding: 2em;
+  }
+
+  .footerLink {
+    display: flex;
+    justify-content: space-evenly;
+    width: 65%;
+  }
+
+  i {
+    font-size: 1.5em;
+    color: var(--primary-color);
+    margin-left: 1em;
+  }
+
+  main {
+    background-color: var(--background);
+    padding: 3em 0;
+  }
+
+  /* Main accueil */
+
+  /* carousel */
+  .images {
+    height: 30em;
+    border-radius: 8px;
+    box-shadow: 1px 5px 10px var(--grey);
+  }
+
+  .mCarousel {
+    width: 80%;
+    margin: auto;
+    margin-bottom: 2em;
+    box-shadow: 1px 5px 10px var(--grey);
+  }
+
+  /* carousel */
+
+  /* map */
+  .map {
+    width: 100%;
+    height: 20em;
+    border-radius: 10px;
+  }
+  /* map */
+
+  .join {
+    display: flex;
+    justify-content: space-evenly;
+  }
+
+  .join > * {
+    width: 45%;
+    border-radius: 10px;
+  }
+
+  .joinSection {
+    border: 2px solid var(--primary-color);
+    padding: 0.7em;
+  }
+
+  .accueil h1 {
+    font-size: 2em;
+    text-align: center;
+    margin-bottom: 1em;
+  }
+
+  .espritZen {
+    width: 80%;
+    margin: 2em auto;
+    background-color: var(--light);
+    border-radius: 10px;
+    padding: 0.7em;
+  }
+
+  /* main article */
+  .articleSection section {
+    width: 30%;
+  }
+
+  .articleSection h2 {
+    color: var(--primary-color);
+    text-align: center;
+    font-size: 1.5em;
+    margin: 1em;
+  }
+
+  .articleSection {
+    display: flex;
+    justify-content: space-evenly;
+  }
+
+  .articleSection p::first-letter {
+    font-family: "Alex Brush";
+    font-size: 2em;
+  }
+
+  /* main cours */
+  h1 {
+    text-align: center;
+  }
+
+  .comment {
+    width: 70%;
+    margin: auto;
+    border: 1px solid var(--primary-color);
+    border-radius: 5px;
+    padding: 1em;
+  }
+
+  .name {
+    font-weight: bold;
+  }
+
+  .scroll {
+    height: 20em;
+    overflow: auto;
+    margin-bottom: 2.5em;
+  }
+
+  .comment form {
+    width: 95%;
+    margin: auto;
+    display: flex;
+    justify-content: space-between
+  }
+
+  .comment input {
+    width: 80%;
+  }
+
+  /* carousel */
+  video {
+    width: 50vh;
+    height: 40vh;
+  }
+
+  #wrapper {
+    width: 100%;
+    position: relative;
+    margin: auto;
+    margin-bottom: 5em;
+  }
+
+  #carousel {
+    overflow: auto;
+    scroll-behavior: smooth;
+    scrollbar-width: none;
+  }
+
+  #carousel::-webkit-scrollbar {
+    height: 0;
+  }
+
+  video {
+    border-radius: 10px;
+  }
+
+  .titleVideo p {
+    font-weight: bold;
+    padding-left: 1em;
+  }
+
+#prev,
+#next {
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  background: var(--white);
+  border: none;
+  padding: 8px;
+  border-radius: 50%;
+  outline: 0;
+  cursor: pointer;
+  position: absolute;
+}
+
+#prev {
+  top: 50%;
+  left: 0;
+  transform: translate(50%, -50%);
+  display: none;
+}
+
+#next {
+  top: 50%;
+  right: 0;
+  transform: translate(-50%, -50%);
+}
+
+#content {
+  display: grid;
+  grid-gap: 16px;
+  grid-auto-flow: column;
+  margin: auto;
+  box-sizing: border-box;
+}
+
+.item {
+  width: 180px;
+  height: 180px;
+}
+ /* carousel */
+
+ /* main planning  */
+ .planning table {
+  border: 2px solid var(--hover);
+  width: 65%;
+  margin: auto;
+  text-align: center;
+ }
+
+ table tr, table th, table td {
+  border: 1px solid var(--primary-color);
+  padding: 1.5em;
+ }
+
+ tbody th {
+  width: 10em;
+  text-align: start;
+ }
+
+/* main RDV */
+ .rdv {
+  display: flex;
+  justify-content: space-around;
+ }
+
+ .formRdv, .carteRdv {
+  width: 45%;
+ }
+
+ .p {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  margin-top: 1em;
+}
+
+.p .separator {
+  border-left: 1px solid var(--black);
+  height: 5em;
+  margin: 1em;
+}
+
+/* form  */
+form h1 {
+  font-size: 2em;
+}
+
+
+.formRdv, .connexion, .formSubscrite {
+  background-color: var(--light);
+  border-radius: 1em;
+  padding: 3em;
+}
+
+form div {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 1em;
+}
+
+.rdv form {
+  width: 70%;
+  margin: auto;
+}
+
+input {
+  border: 2px solid var(--primary-color);
+  border-radius: 5px;
+  height: 2.5em;
+}
+
+.dateHour {
+  flex-direction: row;
+  justify-content: space-between;
+}
+.dateHour div {
+  width: 45%;
+}
+
+
+/* Connexion */
+.connexion {
+  width: 45%;
+  margin: 3em auto;
+}
+
+.connexion form {
+  width: 60%;
+  margin: 2em auto;
+}
+
+.connexion p {
+  text-align: center;
+}
+
+form a {
+  color: var(--link);
+}
+
+/* inscription */
+.formSubscrite {
+  width: 80%;
+  margin: auto;
+}
+
+.subscriteFlex {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.subscriteFlex div {
+  width: 45%;
+}
+
+form a {
+  text-align: center;
+}
+
+.button-container {
+  align-items: center;
+  margin-top: 2em;
+}
+
+button {
+  max-width: 15em;
+}
+
+/* responsive */
+@media screen and (max-width: 950px) {
+
+  /* footer */
+  .footerLink {
+    flex-direction: column;
+  }
+
+  footer {
+    align-items: center;
+  }
+
+  /* main accueil */
+
+  
+  .images {
+    height: 20em;
+  }
+
+  .join {
+    flex-direction: column-reverse;
+    align-items: center;
+  }
+
+  .join > * {
+    width: 90%;
+  }
+
+  .joinSection {
+    margin-bottom: 2em;
+  }
+  
+  /* main article */
+  .articleSection {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .articleSection section {
+    width: 80%;
+  }
+
+  /* main rdv */
+  .rdv {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .formRdv, .carteRdv {
+    width: 80%;
+  }
+
+  .rdvFlex {
+    display: flex;
+    flex-direction: column-reverse
+  }
+
+  /* main connexion */
+  .connexion {
+    width: 80%;
+  }
+
+  /* main inscription */
+  .subscriteFlex {
+    flex-direction: column;
+  }
+
+  .subscriteFlex div {
+    width: 100%;
+  }
+}

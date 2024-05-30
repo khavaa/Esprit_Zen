@@ -1,0 +1,27 @@
+<main class="maincConnexion">
+
+        <div class="formConnexion">
+            <div class="connexion">
+
+            <h1>CONNEXION</h1>
+
+            <form action="" method="get" class="form-example" id="loginForm">
+                <div>
+                    <label for="identifiant">EMAIL</label>
+                    <input type="email" name="identifiant" id="identifiant" aria-label="identifiant" required/>
+                    <span class="error" id="identifiantError"></span>
+                </div>
+                <div>
+                    <label for="password">MOT DE PASSE</label>
+                    <input type="password" name="password" id="password" aria-label="mot de passe" required/>
+                    <span class="error" id="passwordLoginError"></span>
+                </div>
+                <div class="button-container">
+                    <button type="submit" aria-label="button se connecter">SE CONNECTER</button>
+                </div>
+                <p>Pas de compte ? <a href="/inscription">Créer un compte</a></p>
+                <span class="error" id="loginFormError"></span>
+            </form>             
+        </div>
+
+    </main>
