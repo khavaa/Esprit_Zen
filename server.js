@@ -42,6 +42,7 @@ const MomentHandler = require("handlebars.moment");
 MomentHandler.registerHelpers(Handlebars);
 
 app.use(express.urlencoded({ extended: true }));
+// Middleware pour analyser les données JSON des requêtes
 app.use(express.json());
 
 app.use(session({
@@ -53,6 +54,12 @@ app.use(session({
         db: config.sequelize
     }),
 }));
+
+app.use((req, res, next) => {
+    res.locals.isLoggedIn = !!req.session.userId;
+    res.locals.email = req.session.email;  // Ajoutez cette ligne si vous voulez passer l'email de l'utilisateur connecté
+    next();
+});
 
 app.use('/', router);
 

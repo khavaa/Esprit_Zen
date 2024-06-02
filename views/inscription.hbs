@@ -5,45 +5,54 @@
 
             <h1>S'INSCRIRE</h1>
 
+            {{#if errorMessage}}
+                <span class="error">{{errorMessage}}</span>
+            {{/if}}
+
             <span class="error" id="registerFormError"></span>
 
-            <form action="" method="get" class="form-example" id="registerForm">
+            <form action="/inscription" method="post" class="form-example" id="registerForm">
                 <div class="subscriteFlex">
                     <div>
                         <label for="lastname">Nom <span>*</span></label>
                         <input type="text" name="lastname" id="lastname" aria-label="nom de famille" minlength="2" required/>
-                        <span class="error" id="lastnameError"></span>
+                        <span id="lastnameError"></span>
                     </div>
                     <div>
                         <label for="firstname">PRÉNOM <span>*</span></label>
                         <input type="text" name="firstname" id="firstname" aria-label="prénom" minlength="2" required/>
-                        <span class="error" id="firstnameError"></span>
+                        <span id="firstnameError"></span>
                     </div>
                 </div>
                 <div class="subscriteFlex">
                     <div>
                         <label for="email">EMAIL <span>*</span></label>
                         <input type="email" name="email" id="email" aria-label="adresse mail" required/>
-                        <span class="error" id="emailError"></span>
+                        <span id="emailError"></span>
                     </div>
                     <div>
                         <label for="phone">NUMÉRO <span>*</span></label>
-                        <input type="tel" name="phone" id="phone" aria-label="numero de téléphone" pattern="^(\+?\d{1,3}[-.\s]?)?\d{10}$" required/>
-                        <span class="error" id="phoneError"></span>
+                        <input type="tel" name="phone" id="phone" aria-label="numero de téléphone" required/>
+                        <span id="phoneError"></span>
                     </div>
                 </div>
                 <div class="subscriteFlex">
                     <div>
                         <label for="password">MOT DE PASSE <span>*</span></label>
                         <input type="password" name="password" id="password" aria-label="mot de passe" required/>
-                        <span class="error" id="passwordError"></span>
+                        <span id="passwordError"></span>
                     </div>
                     <div>
                         <label for="confPassword">CONFIRMATION DU MOT DE PASSE <span>*</span></label>
                         <input type="password" name="confPassword" id="confPassword" aria-label="confirmation du mot de passe" required/>
-                        <span class="error" id="confPasswordError"></span>
+                        <span id="confPasswordError"></span>
                     </div>
                 </div>
+                <div class="checkbox">
+                    <input type="checkbox" id="cookies" name="cookies" />
+                    <label for="cookies">En vous inscrivant, vous acceptez la <a href="#" aria-label="Lien vers la politique de confidentialité">politique de confidentialité</a></label>
+                </div>
+                <span id="cookiesError"></span>
                 <div class="button-container">
                     <button type="submit" aria-label="button se connecter">INSCRIPTION</button>
                     <a href="/connexion">Se connecter</a>

@@ -1,24 +1,38 @@
 <header>
         <a href="/"><img class="logo" src="/img/logo.png" alt="logo esprit Zen"></a>
         <nav id="menu">
-            <a href="/">Accueil</a>
-            <a href="/planning">Planning</a>
-            <a href="/article">Article</a>
-            <a href="/cours">Nos cours</a>
-            <a href="/rdv">Rendez-vous</a>
-            <a href="/connexion">Connexion</a>
+            <a href="/" aria-label="Aller à la page d'accueil">Accueil</a>
+            <a href="/article" aria-label="Aller à la page des articles">Article</a>
+            {{#if isLoggedIn}}
+            <a href="/cours" aria-label="Aller à la page des cours vidéo">Nos cours</a>
+            <a href="/planning" aria-label="Aller à la page du planning">Planning</a>
+            {{/if}}
+            <a href="/rdv" aria-label="Aller à la page de prise de rendez-vous">Rendez-vous</a>
+            {{#if isLoggedIn}}
+                <a href="/logout" aria-label="Buton pour se deconnecter">Se deconnecter</a>
+            {{else}}
+                <a href="/connexion" aria-label="Aller à la page de connexion">Connexion</a>
+            {{/if}}
+            
         </nav>
 
-        <button class="burger" id="burger" ><i class="fa-solid fa-bars"></i></button>
+        <button class="burger" id="burger" aria-label="buton du menu burger"><i class="fa-solid fa-bars"></i></button>
         <nav class="nav-bar" id="nav-bar-burger">
             <a href="/"><img src="/img/logo.png" alt="logo esprit Zen"></a>
             <ul class="nav-list">
-                <li class="nav-list-item"><a href="/" class="nav-link">Accueil</a></li>
-                <li class="nav-list-item"><a href="/planning" class="nav-link">Planning</a></li>
-                <li class="nav-list-item"><a href="/article" class="nav-link">Article</a></li>
-                <li class="nav-list-item"><a href="/cours" class="nav-link">Nos cours</a></li>
-                <li class="nav-list-item"><a href="/rdv" class="nav-link">Rendez-vous</a></li>
-                <li class="nav-list-item"><a href="/connexion" class="nav-link">Connexion</a></li>
+                <li class="nav-list-item"><a href="/" aria-label="Aller à la page d'accueil" class="nav-link">Accueil</a></li>
+                <li class="nav-list-item"><a href="/article" aria-label="Aller à la page des articles" class="nav-link">Article</a></li>
+                {{#if isLoggedIn}}
+                <li class="nav-list-item"><a href="/cours" aria-label="Aller à la page des cours vidéo" class="nav-link">Nos cours</a></li>
+                <li class="nav-list-item"><a href="/planning" aria-label="Aller à la page du planning" class="nav-link">Planning</a></li>
+                {{/if}}
+                {{#if isLoggedIn}}
+                    <li class="nav-list-item"><a href="/logout" aria-label="Buton pour se deconnecter" class="nav-link">Se deconnecter</a></li>
+                {{else}}
+                    <li class="nav-list-item"><a href="/connexion" aria-label="Aller à la page de connexion" class="nav-link">Connexion</a></li>
+                {{/if}}
+                <li class="nav-list-item"><a href="/rdv" aria-label="Aller à la page de prise de rendez-vous" class="nav-link">Rendez-vous</a></li>
+                
             </ul>
         </nav>      
     </header>

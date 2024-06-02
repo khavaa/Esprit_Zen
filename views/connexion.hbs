@@ -5,10 +5,15 @@
 
             <h1>CONNEXION</h1>
 
-            <form action="" method="get" class="form-example" id="loginForm">
+             {{#if errorMessage}}
+                <span class="error">{{errorMessage}}</span>
+            {{/if}}
+
+            <form action="/connexion" method="post" class="form-example" id="loginForm">
+
                 <div>
                     <label for="identifiant">EMAIL</label>
-                    <input type="email" name="identifiant" id="identifiant" aria-label="identifiant" required/>
+                    <input type="email" name="email" id="identifiant" aria-label="identifiant" required/>
                     <span class="error" id="identifiantError"></span>
                 </div>
                 <div>
