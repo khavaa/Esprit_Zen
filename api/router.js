@@ -4,6 +4,7 @@ const { body } = require('express-validator');
 
 const home_controller = require('./controllers/home_controller');
 const user_controller = require('./controllers/user_controller');
+const comment_controller = require('./controllers/comment_controller');
 
 // Middleware to pass error messages from session to response locals
 router.use((req, res, next) => {
@@ -21,7 +22,8 @@ router.route('/connexion')
     .post(user_controller.loginUser); //connexion user
 
 router.route('/cours')
-    .get(home_controller.getCours);    
+    .get(comment_controller.getComments) // Utiliser la méthode getComments
+    .post(comment_controller.post); // ajout de la route pour poster un commentaire    
 
 router.route('/')
     .get(home_controller.getHome);
@@ -36,8 +38,12 @@ router.route('/planning')
 router.route('/rdv')
     .get(home_controller.getRdv);
 
-    // ***** Deconnxion ********
+// ***** Deconnxion ********
 router.route('/logout')   
     .get(user_controller.logout)
+    
+// ***** Route pour supprimer un commentaire ********
+router.route('/cours/delete/:commentId')
+    .post(comment_controller.delete);   
 
 module.exports = router;

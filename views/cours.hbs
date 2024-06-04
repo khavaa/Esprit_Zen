@@ -75,29 +75,24 @@
         <!-- carousel -->
 
         <section class="comment">
-            <h1>Vos avis</h1>
-
-            <div class="scroll">
-                <p class="name">Corine</p>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod</p>
+        <h1>Vos avis</h1>
+        <div class="scroll">
+            {{#each comments}}
+                <p class="name">{{this.user.firstname}}</p>
+                <p>{{this.content}}</p>
+                {{#if ../isLoggedIn}}
+                    {{#ifCond this.userId ../currentUserId}}
+                        <form action="/cours/delete/{{this.id}}" method="post" style="display:inline;">
+                            <button type="submit"><i class="fa-solid fa-xmark"></i></button>
+                        </form>
+                    {{/ifCond}}
+                {{/if}}
                 <hr>
-
-                <p class="name">Corine</p>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod</p>
-                <hr>
-
-                <p class="name">Corine</p>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod</p>
-                <hr>
-
-                <p class="name">Corine</p>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod</p>
-                <hr>
-            </div>
-
-            <form action="comment" method="post">
-                <input type="text" id="comment" name="comment" placeholder="Commentaire" aria-label="espace commentaire">
-                <button type="submit" aria-label="Envoyer votre commentaire">Envoyer</button>
-            </form>
-        </section>
+            {{/each}}
+        </div>
+        <form action="/cours" method="post">
+            <input type="text" id="comment" name="comment" placeholder="Commentaire" aria-label="espace commentaire">
+            <button type="submit" aria-label="Envoyer votre commentaire">Envoyer</button>
+        </form>
+    </section>
     </main>

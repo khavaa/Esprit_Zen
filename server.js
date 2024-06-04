@@ -12,8 +12,8 @@ const app = express();
 app.engine('hbs', engine({
     extname: 'hbs',
     defaultLayout: 'main', // Default layout file
-  layoutsDir: path.join(__dirname, 'views', 'layouts'), // Directory for layouts
-  partialsDir: path.join(__dirname, 'views', 'partials'), // Directory for partials
+    layoutsDir: path.join(__dirname, 'views', 'layouts'), // Directory for layouts
+    partialsDir: path.join(__dirname, 'views', 'partials'), // Directory for partials
     helpers: {
         ifCond: function(v1, v2, options) {
             if (v1 === v2) {

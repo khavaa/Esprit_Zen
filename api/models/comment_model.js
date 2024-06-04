@@ -11,7 +11,8 @@ const Comment = config.sequelize.define('comment', {
         autoIncrement: true
     },
     content: {
-      type: DataTypes.TEXT
+      type: DataTypes.TEXT,
+      allowNull: false
     },
     // Clé étrangère pour référencer la table Admin
     adminId: {
@@ -31,7 +32,10 @@ const Comment = config.sequelize.define('comment', {
             key: 'id'
         }
     }
-  });
+  }, {
+    tableName: 'comments'
+});
 
+Comment.belongsTo(User, { foreignKey: 'userId' }); //un commentaire appartient à un utilisateur
 
   module.exports = Comment;
