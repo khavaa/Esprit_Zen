@@ -63,7 +63,7 @@ router.route('/logout')
     .get(user_controller.logout); //deco user
 
 router.route('/logoutAdm')
-    .get(home_controller.getAdminConnect); //deco admin
+    .get(admin_controller.logout); //deco admin
 
 // ********** suppression des commentaires ***************
 
