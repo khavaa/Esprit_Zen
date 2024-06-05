@@ -8,6 +8,7 @@ const home_controller = require('./controllers/home_controller');
 const user_controller = require('./controllers/user_controller');
 const appointment_controller = require('./controllers/appointment_controller');
 const comment_controller = require('./controllers/comment_controller');
+const admin_controller = require('./controllers/admin_controller');
 
 // Middleware to pass messages from session to response locals
 router.use((req, res, next) => {
@@ -51,7 +52,8 @@ router.route('/04062024')
 
 router.route('/c04062024')
     .get(home_controller.getAdminConnect)
-    .post(home_controller.getAdminConnect);
+    .post(admin_controller.loginAdmin);
+
 
     router.route('/administration')
     .get(home_controller.getAdministration);
