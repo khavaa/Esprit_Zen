@@ -9,6 +9,7 @@ const router = require('./api/router');
 
 const app = express();
 
+
 app.engine('hbs', engine({
     extname: 'hbs',
     defaultLayout: 'main', // Default layout file

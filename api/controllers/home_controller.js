@@ -5,6 +5,9 @@ const Article = require('../models/article_model');
 const Comment = require('../models/comment_model');
 const Video = require('../models/video_model');
 
+const appointmentController = require('./appointment_controller'); // Importez le contrôleur des rendez-vous
+const userController = require('./user_controller'); // Importez le contrôleur des utilisateurs
+
 module.exports = {
     getArticle: async (req, res) => {
         res.render('article');
@@ -40,4 +43,24 @@ module.exports = {
             res.status(500).send('Erreur lors de la récupération des cours');
         }
     },
+    getAdminAccount: async (req, res) => {
+        res.render('04062024');
+    },
+    getAdminConnect: async (req, res) => {
+        res.render('c04062024');
+    },
+    getAdministration: async (req, res) => {
+        try {
+            const appointments = await appointmentController.getRdv(req, res, () => {});
+            const users = await userController.getUser(req, res, () => {});
+            res.render('administration', {
+                isAdmin: true,
+                appointments: req.appointments || [],
+                users: req.users || []
+            });
+        } catch (error) {
+            console.error('Erreur lors de la récupération des rendez-vous et utilisateurs :', error);
+            res.status(500).send('Erreur lors de la récupération des rendez-vous et utilisateurs');
+        }
+    }
 };

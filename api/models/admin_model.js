@@ -18,6 +18,7 @@ const Admin = config.sequelize.define('admin', {
         allowNull: false
     }
 }, {
+    timestamps: false,  // Désactiver les timestamps
     hooks: {
         beforeCreate: (Admin) => {
             {

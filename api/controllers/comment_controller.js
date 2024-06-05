@@ -20,6 +20,7 @@ module.exports = {
                 include: [{ model: User, attributes: ['firstname'] }],
                 order: [['createdAt', 'DESC']]
             });
+    
             res.render('cours', {
                 comments: comments.map(comment => comment.toJSON()),
                 isLoggedIn: !!req.session.userId,

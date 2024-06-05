@@ -4,14 +4,21 @@
             <a href="/" aria-label="Aller à la page d'accueil">Accueil</a>
             <a href="/article" aria-label="Aller à la page des articles">Article</a>
             {{#if isLoggedIn}}
-            <a href="/cours" aria-label="Aller à la page des cours vidéo">Nos cours</a>
-            <a href="/planning" aria-label="Aller à la page du planning">Planning</a>
+                <a href="/cours" aria-label="Aller à la page des cours vidéo">Nos cours</a>
+                <a href="/planning" aria-label="Aller à la page du planning">Planning</a>
             {{/if}}
             <a href="/rdv" aria-label="Aller à la page de prise de rendez-vous">Rendez-vous</a>
-            {{#if isLoggedIn}}
-                <a href="/logout" aria-label="Buton pour se deconnecter">Se deconnecter</a>
+            {{#if isAdmin}}
+                <a href="/administration" aria-label="Aller à la page des administration">Administration</a>
+            {{/if}}
+            {{#if isAdmin}}
+                <a href="/logoutAdm" aria-label="Buton pour se deconnecter">Se deconnecter</a>
             {{else}}
-                <a href="/connexion" aria-label="Aller à la page de connexion">Connexion</a>
+                {{#if isLoggedIn}}
+                    <a href="/logout" aria-label="Buton pour se deconnecter">Se deconnecter</a>
+                {{else}}
+                    <a href="/connexion" aria-label="Aller à la page de connexion">Connexion</a>
+                {{/if}}
             {{/if}}
             
         </nav>
@@ -23,16 +30,18 @@
                 <li class="nav-list-item"><a href="/" aria-label="Aller à la page d'accueil" class="nav-link">Accueil</a></li>
                 <li class="nav-list-item"><a href="/article" aria-label="Aller à la page des articles" class="nav-link">Article</a></li>
                 {{#if isLoggedIn}}
-                <li class="nav-list-item"><a href="/cours" aria-label="Aller à la page des cours vidéo" class="nav-link">Nos cours</a></li>
-                <li class="nav-list-item"><a href="/planning" aria-label="Aller à la page du planning" class="nav-link">Planning</a></li>
+                    <li class="nav-list-item"><a href="/cours" aria-label="Aller à la page des cours vidéo" class="nav-link">Nos cours</a></li>
+                    <li class="nav-list-item"><a href="/planning" aria-label="Aller à la page du planning" class="nav-link">Planning</a></li>
+                {{/if}}
+                <li class="nav-list-item"><a href="/rdv" aria-label="Aller à la page de prise de rendez-vous" class="nav-link">Rendez-vous</a></li>
+                {{#if isAdmin}}
+                    <li class="nav-list-item"><a href="/administration" aria-label="Aller à la page des administration">Administration</a></li>
                 {{/if}}
                 {{#if isLoggedIn}}
                     <li class="nav-list-item"><a href="/logout" aria-label="Buton pour se deconnecter" class="nav-link">Se deconnecter</a></li>
                 {{else}}
                     <li class="nav-list-item"><a href="/connexion" aria-label="Aller à la page de connexion" class="nav-link">Connexion</a></li>
                 {{/if}}
-                <li class="nav-list-item"><a href="/rdv" aria-label="Aller à la page de prise de rendez-vous" class="nav-link">Rendez-vous</a></li>
-                
             </ul>
         </nav>      
     </header>

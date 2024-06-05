@@ -52,5 +52,36 @@ module.exports = {
     logout: (req, res) => {
         req.session.destroy()
         res.redirect('/')
+    },
+    getUser: async (req, res, next) => {
+        try {
+            const users = await User.findAll({
+                attributes: ['id', 'firstname', 'lastname', 'email', 'phone_number'],
+                order: [['createdAt', 'DESC']]
+            });
+            console.log('Users retrieved from the database:', users);
+            req.users = users.map(user => user.toJSON()); // Mettre les utilisateurs dans req.users
+            next(); // Appeler le middleware suivant
+        } catch (error) {
+            console.error('Erreur lors de la récupération des utilisateurs :', error);
+            res.status(500).send('Erreur lors de la récupération des utilisateurs');
+        }
+    },
+    deleteUser: async (req, res) => {
+        try {
+            const userId = req.params.userId;
+            if (!userId) {
+                return res.status(400).send('User ID is required');
+            }
+
+            await User.destroy({
+                where: { id: userId }
+            });
+
+            res.redirect('/administration');
+        } catch (error) {
+            console.error('Erreur lors de la suppression de l\'utilisateur :', error);
+            res.status(500).send('Erreur lors de la suppression de l\'utilisateur');
+        }
     }
 }

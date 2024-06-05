@@ -1,0 +1,34 @@
+<main class="adminCreate">
+
+        <div class="formSubscrite">
+            <div class="subscrite">
+
+            <h1>CRÉATION DU COMPTE</h1>
+
+            {{#if errorMessage}}
+                <span class="error">{{errorMessage}}</span>
+            {{/if}}
+
+            <span class="error" id="registerFormError"></span>
+
+            <form action="/04062024" method="post" class="form-example" id="registerForm">
+                <div class="subscriteFlex">
+                    <div>
+                        <label for="email">EMAIL</label>
+                        <input type="email" name="emailAdm" id="email" aria-label="adresse mail" required/>
+                        <span id="emailError"></span>
+                    </div>
+                    <div>
+                        <label for="password">MOT DE PASSE</label>
+                        <input type="password" name="passwordAdm" id="password" aria-label="mot de passe" required/>
+                        <span id="passwordError"></span>
+                    </div>
+                </div>
+                <div class="button-container">
+                    <button type="submit" aria-label="button se connecter">INSCRIPTION</button>
+                </div>
+            </form>
+                          
+        </div>
+
+    </main>

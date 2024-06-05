@@ -3,10 +3,17 @@
 
         <span id="error_rdv"></span>
 
+         {{#if successMessage}}
+                <span class="success">{{successMessage}}</span>
+            {{/if}}
+            {{#if errorMessage}}
+                <span class="error">{{errorMessage}}</span>
+        {{/if}}
+
         <div class="rdv">
 
             <div class="formRdv">
-                <form action="" method="get" class="form-example" id="appointmentForm">
+                <form action="/rdv" method="post" class="form-example" id="appointmentForm">
                     <span class="error" id="appointmentFormError"></span>
                     <div class="form-example">
                         <label for="lastname_rdv">NOM</label>
@@ -38,8 +45,8 @@
                     <div class="button-container">
                         <button type="submit" aria-label="button envoyer mon rendez-vous">ENVOYER</button>
                     </div>
-                    
-                </form>              
+                </form>
+           
             </div>
 
             <div class="carteRdv">

@@ -1,0 +1,70 @@
+<!-- views/administration.hbs -->
+
+<main class="planning">
+  <h1>Rendez-vous à venir</h1>
+
+  <div class="scroll">
+    <table>
+      <thead>
+        <tr>
+          <th scope="col">NOM</th>
+          <th scope="col">PRÉNOM</th>
+          <th scope="col">NUMÉRO</th>
+          <th scope="col">DATE</th>
+          <th scope="col">HEURE</th>
+          <th scope="col">delete</th>
+        </tr>
+      </thead>
+      <tbody>
+        {{#each appointments}}
+          <tr>
+            <td>{{lastname}}</td>
+            <td>{{firstname}}</td>
+            <td>{{phone_number}}</td>
+            <td>{{moment date_meeting format="DD/MM/YY"}}</td>
+            <td>{{hour_meeting}}</td>
+            <td>
+              <form action="/administration/delete/{{id}}" method="POST">
+                <button type="submit" class="delete"><i class="fa-solid fa-xmark"></i></button>
+              </form>
+            </td>
+          </tr>
+        {{/each}}
+      </tbody>
+    </table>
+  </div>
+  <hr>
+  <h1>Les utilisateurs</h1>
+  <div class="scroll">
+    {{#if users}}
+    <table>
+      <thead>
+        <tr>
+          <th scope="col">NOM</th>
+          <th scope="col">PRÉNOM</th>
+          <th scope="col">EMAIL</th>
+          <th scope="col">NUMÉRO</th>
+          <th scope="col">MODIFIER</th>
+        </tr>
+      </thead>
+      <tbody>
+        {{#each users}}
+          <tr>
+            <td>{{lastname}}</td>
+            <td>{{firstname}}</td>
+            <td>{{email}}</td>
+            <td>{{phone_number}}</td>
+            <td>
+              <form action="/administration/deleteUser/{{id}}" method="POST">
+                <button type="submit" class="delete"><i class="fa-solid fa-xmark"></i></button>
+              </form>
+            </td>
+          </tr>
+        {{/each}}
+      </tbody>
+    </table>
+    {{else}}
+      <p>Aucun utilisateur trouvé.</p>
+    {{/if}}
+  </div>
+</main>

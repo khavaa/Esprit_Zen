@@ -39,6 +39,8 @@ const Appointment = config.sequelize.define('appointment', {
             key: 'id'
         }
     }
+}, {
+    timestamps: true,
 })
 
 module.exports = Appointment;

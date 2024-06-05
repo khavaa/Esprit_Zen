@@ -1,0 +1,26 @@
+
+<main class="maincConnexion">
+
+        <div class="formConnexion">
+            <div class="connexion">
+
+            <h1>Connexion Administrateur</h1>
+
+        {{#if errorMessage}}
+            <span class="error">{{errorMessage}}</span>
+        {{/if}}
+
+        <form action="/c04062024" method="post">
+            <div>
+                <label for="email">Email</label>
+                <input type="email" name="email" id="email" required />
+            </div>
+            <div>
+                <label for="password">Mot de passe</label>
+                <input type="password" name="password" id="password" required />
+            </div>
+            <button type="submit">Se connecter</button>
+        </form>            
+        </div>
+
+    </main>

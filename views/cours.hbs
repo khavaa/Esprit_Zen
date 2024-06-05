@@ -1,98 +1,101 @@
 <main class="cours">
 
-        <!-- Les bonnes pratiques à considérer pour rendre les vidéos en HTML accessibles:
-        Insérer des sous-titres et des légendes
-        Ajouter de l'audiodescription -->
-        <!-- <div>
-            <video src="https://assets.codepen.io/6093409/hubspot-video-example.mp4" controls> L'attribut controls indique au navigateur qu'il faut afficher les commandes de contrôle sur le lecteur vidéo. Avec controls, l'internaute actionne la lecture de la vidéo et peut la mettre en pause, il contrôle le son, il peut afficher la vidéo en plein écran, avancer et revenir en arrière. Si l'attribut controls n'est pas indiqué dans l'élément HTML de la vidéo, les commandes n'apparaissent pas.
-            </video>
-        </div> -->
+    <!-- Les bonnes pratiques à considérer pour rendre les vidéos en HTML accessibles:
+    Insérer des sous-titres et des légendes
+    Ajouter de l'audiodescription -->
+    <!-- <div>
+        <video src="https://assets.codepen.io/6093409/hubspot-video-example.mp4" controls> L'attribut controls indique au navigateur qu'il faut afficher les commandes de contrôle sur le lecteur vidéo. Avec controls, l'internaute actionne la lecture de la vidéo et peut la mettre en pause, il contrôle le son, il peut afficher la vidéo en plein écran, avancer et revenir en arrière. Si l'attribut controls n'est pas indiqué dans l'élément HTML de la vidéo, les commandes n'apparaissent pas.
+        </video>
+    </div> -->
 
-        <!-- carousel -->
-        <div id="wrapper">
-            <div id="carousel">
-              <div id="content">
+    <!-- carousel -->
+    <div id="wrapper">
+        <div id="carousel">
+          <div id="content">
 
-                <div class="titleVideo">
-                  <video src="https://assets.codepen.io/6093409/hubspot-video-example.mp4" controls></video>
-                  <p>test</p>
-                </div>
-                <div class="titleVideo">
-                  <video src="https://assets.codepen.io/6093409/hubspot-video-example.mp4" controls></video>
-                  <p>test</p>
-                </div>
-                <div class="titleVideo">
-                  <video src="https://assets.codepen.io/6093409/hubspot-video-example.mp4" controls></video>
-                  <p>test</p>
-                </div>
-                <div class="titleVideo">
-                  <video src="https://assets.codepen.io/6093409/hubspot-video-example.mp4" controls></video>
-                  <p>test</p>
-                </div>
-                <div class="titleVideo">
-                  <video src="https://assets.codepen.io/6093409/hubspot-video-example.mp4" controls></video>
-                  <p>test</p>
-                </div>
-                <div class="titleVideo">
-                  <video src="https://assets.codepen.io/6093409/hubspot-video-example.mp4" controls></video>
-                  <p>test</p>
-                </div>
-                <div class="titleVideo">
-                  <video src="https://assets.codepen.io/6093409/hubspot-video-example.mp4" controls></video>
-                  <p>test</p>
-                </div>
-                <div class="titleVideo">
-                  <video src="https://assets.codepen.io/6093409/hubspot-video-example.mp4" controls></video>
-                  <p>test</p>
-                </div>
-                <div class="titleVideo">
-                  <video src="https://assets.codepen.io/6093409/hubspot-video-example.mp4" controls></video>
-                  <p>test</p>
-                </div>
-              </div>
+            <div class="titleVideo">
+              <video src="https://assets.codepen.io/6093409/hubspot-video-example.mp4" controls></video>
+              <p>test</p>
             </div>
-            <button id="prev">
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                width="24"
-                height="24"
-                viewBox="0 0 24 24">
-                <path fill="none" d="M0 0h24v24H0V0z" />
-                <path d="M15.61 7.41L14.2 6l-6 6 6 6 1.41-1.41L11.03 12l4.58-4.59z" />
-              </svg>
-            </button>
-            <button id="next">
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                width="24"
-                height="24"
-                viewBox="0 0 24 24">
-                <path fill="none" d="M0 0h24v24H0V0z" />
-                <path d="M10.02 6L8.61 7.41 13.19 12l-4.58 4.59L10.02 18l6-6-6-6z" />
-              </svg>
-            </button>
+            <div class="titleVideo">
+              <video src="https://assets.codepen.io/6093409/hubspot-video-example.mp4" controls></video>
+              <p>test</p>
+            </div>
+            <div class="titleVideo">
+              <video src="https://assets.codepen.io/6093409/hubspot-video-example.mp4" controls></video>
+              <p>test</p>
+            </div>
+            <div class="titleVideo">
+              <video src="https://assets.codepen.io/6093409/hubspot-video-example.mp4" controls></video>
+              <p>test</p>
+            </div>
+            <div class="titleVideo">
+              <video src="https://assets.codepen.io/6093409/hubspot-video-example.mp4" controls></video>
+              <p>test</p>
+            </div>
+            <div class="titleVideo">
+              <video src="https://assets.codepen.io/6093409/hubspot-video-example.mp4" controls></video>
+              <p>test</p>
+            </div>
+            <div class="titleVideo">
+              <video src="https://assets.codepen.io/6093409/hubspot-video-example.mp4" controls></video>
+              <p>test</p>
+            </div>
+            <div class="titleVideo">
+              <video src="https://assets.codepen.io/6093409/hubspot-video-example.mp4" controls></video>
+              <p>test</p>
+            </div>
+            <div class="titleVideo">
+              <video src="https://assets.codepen.io/6093409/hubspot-video-example.mp4" controls></video>
+              <p>test</p>
+            </div>
           </div>
-        <!-- carousel -->
-
-        <section class="comment">
-        <h1>Vos avis</h1>
-        <div class="scroll">
-            {{#each comments}}
-                <p class="name">{{this.user.firstname}}</p>
-                <p>{{this.content}}</p>
-                {{#if ../isLoggedIn}}
-                    {{#ifCond this.userId ../currentUserId}}
-                        <form action="/cours/delete/{{this.id}}" method="post" style="display:inline;">
-                            <button type="submit"><i class="fa-solid fa-xmark"></i></button>
-                        </form>
-                    {{/ifCond}}
-                {{/if}}
-                <hr>
-            {{/each}}
         </div>
-        <form action="/cours" method="post">
-            <input type="text" id="comment" name="comment" placeholder="Commentaire" aria-label="espace commentaire">
-            <button type="submit" aria-label="Envoyer votre commentaire">Envoyer</button>
-        </form>
-    </section>
-    </main>
+        <button id="prev">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="24"
+            height="24"
+            viewBox="0 0 24 24">
+            <path fill="none" d="M0 0h24v24H0V0z" />
+            <path d="M15.61 7.41L14.2 6l-6 6 6 6 1.41-1.41L11.03 12l4.58-4.59z" />
+          </svg>
+        </button>
+        <button id="next">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="24"
+            height="24"
+            viewBox="0 0 24 24">
+            <path fill="none" d="M0 0h24v24H0V0z" />
+            <path d="M10.02 6L8.61 7.41 13.19 12l-4.58 4.59L10.02 18l6-6-6-6z" />
+          </svg>
+        </button>
+      </div>
+    <!-- carousel -->
+
+    <section class="comment">
+      <h1>Commentaires</h1>
+      <div class="scroll">
+          {{#each comments}}
+              <p class="name">{{this.user.firstname}}</p>
+              <div class="align_delete">
+                <p>{{this.content}}</p>
+              {{#if ../isLoggedIn}}
+                  {{#ifCond this.userId ../currentUserId}}
+                      <form action="/cours/delete/{{this.id}}" method="post">
+                          <button type="submit" class="delete"><i class="fa-solid fa-xmark"></i></button>
+                      </form>
+                  {{/ifCond}}
+              </div>
+              
+              {{/if}}
+              <hr>
+          {{/each}}
+      </div>
+      <form action="/cours" method="post">
+          <input type="text" id="comment" name="comment" placeholder="Commentaire" aria-label="espace commentaire">
+          <button type="submit" aria-label="Envoyer votre commentaire">Envoyer</button>
+      </form>
+  </section>
+</main>

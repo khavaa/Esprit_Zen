@@ -262,12 +262,44 @@ body, html {
     text-align: center;
   }
 
+  #wrapper{
+    background-color: var(--black);
+  }
+
+  #wrapper p{
+    color: var(--white);
+  }
+
   .comment {
     width: 70%;
     margin: auto;
     border: 1px solid var(--primary-color);
     border-radius: 5px;
     padding: 1em;
+    box-shadow: inset 1em 0.5em 5em 0.2em var(--light);
+    box-shadow: 5px 1px 10px 1px var(--grey);
+  }
+
+  .align_delete {
+    display: flex;
+  }
+
+  .align_delete form {
+    flex-direction: row-reverse;
+    width: 10% !important; 
+  }
+
+  .align_delete p {
+    width: 95%;
+  }
+
+  .delete {
+    background-color: var(--white);
+    justify-content: end;
+  }
+
+  .delete:hover {
+    background-color: var(--white);
   }
 
   .name {
@@ -499,6 +531,14 @@ button {
   flex-direction: row;
   justify-content: center;
   align-items: center;
+}
+
+/* form create admin */
+.adminCreate .subscriteFlex {
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  margin: 7em;
 }
 
 /* responsive */
